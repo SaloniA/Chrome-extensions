@@ -1,0 +1,26 @@
+{
+  "name": "Flowers Everywhere",
+  "version": "1.0",
+  "description": "Replace images with flowers.",
+  "manifest_version": 2,
+  "content_scripts": [{
+      "matches": ["<all_urls>"],
+      "all_frames": true,
+      "js":      ["contentScript.js"]
+  }],
+  "permissions": [
+    "https://some-random-api.ml/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "icons": {
+    "16": "tv16.png",
+    "32": "tv32.png",
+    "128": "tv128.png"
+  },
+  "web_accessible_resources" : [
+    "images/*.png"
+  ]
+}
